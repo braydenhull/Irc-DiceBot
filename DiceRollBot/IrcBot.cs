@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Meebey.SmartIrc4net;
 using Newtonsoft.Json;
 using DiceRollBot.Commands;
@@ -120,6 +118,5 @@ namespace DiceRollBot
         public char CommandPrefix { get; set; } = '!';
 
         public List<string> AutoJoinChannels { get; set; } 
-        public List<string> AdministratorNicks { get; set; } = new List<string>();
     }
 }

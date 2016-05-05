@@ -1,0 +1,7 @@
+﻿{
+  "ConnectionUri": "irc://irc.synirc.net:6667",
+  "RealName": "DiceBot",
+  "Nick": "DiceBotTest",
+  "Username": "DiceBot",
+  "AutoJoinChannels": ["#dicedev"] 
+}
