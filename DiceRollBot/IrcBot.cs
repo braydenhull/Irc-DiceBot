@@ -22,7 +22,8 @@ namespace DiceRollBot
                 CommandProvider = new RollDice(),
                 Patterns = new  List<Regex>
                 {
-                    new Regex(@"^roll (\d+)d(\d+)$", RegexOptions.Compiled | RegexOptions.IgnoreCase)
+                    new Regex(@"^roll (\d+)d(\d+)$", RegexOptions.Compiled | RegexOptions.IgnoreCase),
+                    new Regex(@"^roll (\d+)d(\d+) (\W)(\d+)$", RegexOptions.Compiled | RegexOptions.IgnoreCase),
                 }
             }
         }; 
@@ -68,7 +69,7 @@ namespace DiceRollBot
             if (eventArgs.Data.Message[0] != _config.CommandPrefix) return;
 
             string nick = eventArgs.Data.Nick.Split('!')[0];
-            string cleanedMessage = eventArgs.Data.Message.TrimStart(_config.CommandPrefix);
+            string cleanedMessage = eventArgs.Data.Message.ToLower().TrimStart(_config.CommandPrefix);
 
             foreach (Command command in _commands)
             {
